@@ -8,7 +8,7 @@ import { buildSimpleWhatsAppUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Visitanos en Palermo o escribinos por WhatsApp.",
+  description: "Visítanos en nuestra tienda o escríbenos por WhatsApp.",
 };
 
 export default function ContactoPage() {
@@ -26,10 +26,11 @@ export default function ContactoPage() {
               className="text-6xl md:text-[9vw] leading-[0.9]"
               trigger="none"
             >
-              Vení a saludar.
+              Ven a saludar.
             </SplitReveal>
-            <p className="serif-italic text-xl md:text-2xl text-ink/70 mt-8 max-w-xl leading-snug">
-              Nos encontrás en nuestro taller de Palermo, con vitrina abierta al público. O pedí por WhatsApp y coordinamos la entrega.
+            <p className="serif-italic text-xl md:text-2xl text-ink/70 mt-8 max-w-xl leading-snug capitalize-first">
+              Nos encontrarás en nuestra tienda de {SITE.neighborhood}, con vitrina abierta al público.
+              O pide por WhatsApp y coordinamos la entrega.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <MagneticButton
@@ -40,7 +41,7 @@ export default function ContactoPage() {
                 data-cursor-label="WhatsApp"
                 className="h-14 px-8 rounded-full bg-ink text-cream text-xs uppercase tracking-[0.3em] hover:bg-gold-deep"
               >
-                Escribinos por WhatsApp
+                Escríbenos por WhatsApp
               </MagneticButton>
               <MagneticButton
                 as="a"
@@ -109,13 +110,13 @@ export default function ContactoPage() {
           <div className="absolute inset-0 flex items-center justify-center text-cream text-center px-6">
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-gold mb-4">
-                Visitanos
+                Visítanos
               </p>
-              <h2 className="display text-5xl md:text-7xl leading-[0.95]">
-                Palermo, Buenos Aires
+              <h2 className="display text-5xl md:text-7xl leading-[0.95] capitalize">
+                {SITE.neighborhood}, {SITE.city}
               </h2>
               <p className="serif-italic text-xl text-cream/70 mt-4">
-                A dos cuadras de Plaza Armenia.
+                A pocos pasos del centro de tu ciudad.
               </p>
             </div>
           </div>

@@ -16,9 +16,9 @@ export function Footer() {
               <span className="text-gold">✦</span>
               <span className="serif-italic">artesanal</span>
               <span className="text-gold">✦</span>
-              <span>Maison Dulce</span>
+              <span>{SITE.name}</span>
               <span className="text-gold">✦</span>
-              <span className="serif-italic">parisina</span>
+              <span className="serif-italic">de tu ciudad</span>
               <span className="text-gold">✦</span>
             </span>
           ))}
@@ -94,7 +94,7 @@ export function Footer() {
 
       <div className="border-t border-cream/10 py-6 px-6 md:px-10 flex flex-col md:flex-row justify-between gap-2 text-[11px] uppercase tracking-[0.3em] text-cream/40">
         <p>© {year} {SITE.name}. Todos los derechos reservados.</p>
-        <p>Horneado en Buenos Aires</p>
+        <p className="capitalize">Horneado con amor en {SITE.city}</p>
       </div>
     </footer>
   );

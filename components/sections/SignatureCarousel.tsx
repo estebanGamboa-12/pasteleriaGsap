@@ -100,7 +100,7 @@ export function SignatureCarousel() {
           </h2>
         </div>
         <p className="hidden md:block serif-italic text-lg text-ink/60 max-w-xs">
-          Cada pieza es horneada a mano en lotes pequeños. Deslizá para descubrirlas.
+          Cada pieza es horneada a mano en lotes pequeños. Desliza para descubrirlas.
         </p>
       </div>
 

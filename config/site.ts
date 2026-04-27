@@ -1,11 +1,18 @@
 export const SITE = {
-  name: "Maison Dulce",
-  tagline: "Pastelería artesanal parisina",
+  name: "Tu Pastelería",
+  shortName: "Tu Pastelería",
+  tagline: "Pastelería artesanal de tu ciudad",
   description:
-    "Tortas, macarons y bocados finos, horneados a mano con ingredientes de estación. Pedidos por WhatsApp.",
-  whatsappPhone: "+54 9 11 0000-0000",
-  email: "hola@maisondulce.ar",
-  address: "Av. Libertador 2450, Palermo, Buenos Aires",
+    "Tartas, macarons y bocados finos, horneados a mano con ingredientes de temporada. Pedidos directos por WhatsApp.",
+  // Demo: el cliente reemplaza estos valores al contratar.
+  whatsappPhone: "+34 600 000 000",
+  email: "hola@tupasteleria.com",
+  address: "Tu calle 123, tu ciudad",
+  city: "tu ciudad",
+  neighborhood: "el centro",
+  country: "España",
+  foundedYear: 1999,
+  founder: "tu maestra pastelera",
   hours: [
     { day: "Martes a viernes", value: "09:00 – 20:00" },
     { day: "Sábados", value: "10:00 – 21:00" },
@@ -22,6 +29,12 @@ export const SITE = {
     { label: "Nosotros", href: "/nosotros" },
     { label: "Contacto", href: "/contacto" },
   ],
+  // Locale & moneda — cámbialo si tu cliente factura en otra divisa.
+  locale: "es-ES",
+  currency: "EUR",
+  // Dominio / URL canónica del demo. Cuando se despliegue un subdominio
+  // por cliente, este valor se sobrescribe vía variable de entorno.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tupasteleria.demo",
 } as const;
 
 export type SiteConfig = typeof SITE;

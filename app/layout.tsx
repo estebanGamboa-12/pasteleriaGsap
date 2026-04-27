@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
-  metadataBase: new URL("https://maisondulce.ar"),
+  metadataBase: new URL(SITE.url),
 };
 
 export default function RootLayout({

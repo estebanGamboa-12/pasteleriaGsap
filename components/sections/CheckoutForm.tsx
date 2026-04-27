@@ -38,7 +38,7 @@ export function CheckoutForm() {
 
   const onSubmit = () => {
     if (!canSubmit) {
-      setError("Completá tu nombre, fecha y dirección si elegís envío.");
+      setError("Completa tu nombre, fecha y dirección si eliges envío.");
       return;
     }
     const url = buildWhatsAppUrl(items, {
@@ -101,14 +101,14 @@ export function CheckoutForm() {
             <em className="serif-italic text-rose-deep">te escribimos.</em>
           </h1>
           <p className="serif-italic text-xl text-ink/65 mt-6 max-w-xl">
-            Al confirmar, abrimos WhatsApp con tu pedido ya escrito. Sólo tenés que enviarlo.
+            Al confirmar, abrimos WhatsApp con tu pedido ya escrito. Solo tienes que enviarlo.
           </p>
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-7">
             <p className="text-[10px] uppercase tracking-[0.3em] text-ink/50 mb-4">
-              Tu canasta ({count} {count === 1 ? "pieza" : "piezas"})
+              Tu cesta ({count} {count === 1 ? "pieza" : "piezas"})
             </p>
             <ul className="divide-y divide-ink/10 border-y border-ink/10">
               <AnimatePresence initial={false}>
@@ -172,7 +172,7 @@ export function CheckoutForm() {
               data-cursor="link"
               className="mt-4 text-[11px] uppercase tracking-[0.3em] text-ink/50 hover:text-ink"
             >
-              Vaciar canasta
+              Vaciar cesta
             </button>
           </div>
 
@@ -202,7 +202,7 @@ export function CheckoutForm() {
                 <div className="grid grid-cols-2 gap-2">
                   {(
                     [
-                      { id: "retiro", label: "Retiro en local" },
+                      { id: "retiro", label: "Recoger en tienda" },
                       { id: "envio", label: "Envío a domicilio" },
                     ] as const
                   ).map((m) => (
@@ -274,7 +274,7 @@ export function CheckoutForm() {
               </MagneticButton>
 
               <p className="text-[11px] text-ink/50 leading-relaxed">
-                Te llevamos a WhatsApp con el pedido armado. Vos confirmás y coordinamos el pago y la entrega por chat.
+                Te llevamos a WhatsApp con el pedido preparado. Tú confirmas y coordinamos el pago y la entrega por chat.
               </p>
             </div>
           </div>

@@ -4,19 +4,20 @@ import { SplitReveal } from "@/components/ui/SplitReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { buildSimpleWhatsAppUrl } from "@/lib/whatsapp";
 import { Marquee } from "@/components/ui/Marquee";
+import { SITE } from "@/config/site";
 
 export function CTAWhatsApp() {
   return (
     <section className="relative bg-gold text-ink overflow-hidden">
       <Marquee className="py-4 border-b border-ink/20" speed={40}>
-        <span className="display text-[8vw] md:text-[4vw]">Pedí por WhatsApp</span>
+        <span className="display text-[8vw] md:text-[4vw]">Pide por WhatsApp</span>
         <span className="display text-[8vw] md:text-[4vw]">✦</span>
         <span className="display text-[8vw] md:text-[4vw] serif-italic">
-          retirá en el local
+          recoge en la tienda
         </span>
         <span className="display text-[8vw] md:text-[4vw]">✦</span>
-        <span className="display text-[8vw] md:text-[4vw]">
-          envíos a CABA
+        <span className="display text-[8vw] md:text-[4vw] capitalize">
+          envíos en {SITE.city}
         </span>
         <span className="display text-[8vw] md:text-[4vw]">✦</span>
       </Marquee>
@@ -35,7 +36,7 @@ export function CTAWhatsApp() {
         </div>
         <div className="space-y-8">
           <p className="serif-italic text-xl md:text-2xl max-w-md leading-snug">
-            Armá tu pedido navegando el catálogo o escribinos directo. Coordinamos
+            Monta tu pedido navegando el catálogo o escríbenos directamente. Coordinamos
             sabor, tamaño, decoración y entrega por WhatsApp en minutos.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -55,7 +56,7 @@ export function CTAWhatsApp() {
               data-cursor-label="Explorar"
               className="h-14 px-8 rounded-full border border-ink text-xs uppercase tracking-[0.3em] hover:bg-ink hover:text-cream"
             >
-              Armar pedido
+              Montar pedido
             </MagneticButton>
           </div>
         </div>
@@ -66,9 +67,7 @@ export function CTAWhatsApp() {
           horneado hoy
         </span>
         <span className="display text-[8vw] md:text-[4vw]">✦</span>
-        <span className="display text-[8vw] md:text-[4vw]">
-          Maison Dulce
-        </span>
+        <span className="display text-[8vw] md:text-[4vw]">{SITE.name}</span>
         <span className="display text-[8vw] md:text-[4vw]">✦</span>
         <span className="display text-[8vw] md:text-[4vw] serif-italic">
           artesanal

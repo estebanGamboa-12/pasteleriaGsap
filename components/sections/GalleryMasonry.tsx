@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SITE } from "@/config/site";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -103,8 +104,8 @@ export function GalleryMasonry() {
               <em className="serif-italic text-rose-deep">la pastelería.</em>
             </h2>
           </div>
-          <p className="hidden md:block serif-italic text-lg text-ink/60 max-w-sm">
-            Escenas de nuestro taller en Palermo, donde cada receta toma forma.
+          <p className="hidden md:block serif-italic text-lg text-ink/60 max-w-sm capitalize-first">
+            Escenas de nuestro obrador en {SITE.neighborhood}, donde cada receta toma forma.
           </p>
         </div>
 

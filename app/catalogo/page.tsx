@@ -5,7 +5,7 @@ import { SplitReveal } from "@/components/ui/SplitReveal";
 export const metadata: Metadata = {
   title: "Catálogo",
   description:
-    "Explorá nuestras tortas, tartas, macarons y bocados. Pedidos artesanales directo por WhatsApp.",
+    "Explora nuestras tartas, pasteles, macarons y bocados. Pedidos artesanales directo por WhatsApp.",
 };
 
 export default function CatalogoPage() {
@@ -16,18 +16,18 @@ export default function CatalogoPage() {
           <div className="md:col-span-8">
             <p className="flex items-center gap-3 text-[11px] uppercase tracking-[0.4em] text-ink/50 mb-6">
               <span className="inline-block w-8 h-px bg-gold" />
-              Catálogo 2026
+              Catálogo {new Date().getFullYear()}
             </p>
             <SplitReveal
               as="h1"
               className="text-6xl md:text-[9vw] leading-[0.9]"
               trigger="none"
             >
-              Elegí tu próximo antojo.
+              Elige tu próximo antojo.
             </SplitReveal>
           </div>
           <p className="md:col-span-4 serif-italic text-xl md:text-2xl text-ink/65 md:text-right leading-snug">
-            Cada pieza horneada a mano, en lotes chicos y con ingredientes de estación.
+            Cada pieza horneada a mano, en lotes pequeños y con ingredientes de temporada.
           </p>
         </div>
       </section>

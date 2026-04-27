@@ -71,7 +71,7 @@ export const useCart = create<CartState>()(
       toggleDrawer: () => set((state) => ({ isOpen: !state.isOpen })),
     }),
     {
-      name: "maison-dulce-cart",
+      name: "demo-pasteleria-cart",
       partialize: (state) => ({ items: state.items }),
     }
   )

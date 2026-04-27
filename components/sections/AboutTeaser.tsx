@@ -8,6 +8,7 @@ import { ImageReveal } from "@/components/ui/ImageReveal";
 import { SplitReveal } from "@/components/ui/SplitReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Marquee } from "@/components/ui/Marquee";
+import { SITE } from "@/config/site";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +16,7 @@ if (typeof window !== "undefined") {
 
 const STATS = [
   { value: 25, suffix: "+", label: "Años horneando" },
-  { value: 12, suffix: "k", label: "Tortas servidas" },
+  { value: 12, suffix: "k", label: "Tartas servidas" },
   { value: 72, suffix: "h", label: "De fermentación" },
   { value: 100, suffix: "%", label: "Hecho a mano" },
 ];
@@ -112,26 +113,26 @@ export function AboutTeaser() {
     >
       <div className="border-y border-ink/10 bg-cream-2/60">
         <Marquee className="py-5" speed={50}>
-          <span className="display text-3xl md:text-4xl">París</span>
+          <span className="display text-3xl md:text-4xl">{SITE.shortName}</span>
           <span className="text-gold text-3xl">✦</span>
-          <span className="serif-italic text-3xl md:text-4xl text-ink/70">
-            Buenos Aires
+          <span className="serif-italic text-3xl md:text-4xl text-ink/70 capitalize">
+            {SITE.city}
           </span>
           <span className="text-gold text-3xl">✦</span>
-          <span className="display text-3xl md:text-4xl">desde 1999</span>
+          <span className="display text-3xl md:text-4xl">desde {SITE.foundedYear}</span>
           <span className="text-gold text-3xl">✦</span>
           <span className="serif-italic text-3xl md:text-4xl text-ink/70">
             hecho a mano
           </span>
           <span className="text-gold text-3xl">✦</span>
-          <span className="display text-3xl md:text-4xl">lotes chicos</span>
+          <span className="display text-3xl md:text-4xl">lotes pequeños</span>
           <span className="text-gold text-3xl">✦</span>
         </Marquee>
       </div>
 
       <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-40">
         <p className="absolute left-4 md:left-10 top-28 md:top-44 text-[10px] uppercase tracking-[0.5em] text-ink/40 origin-top-left -rotate-90 translate-y-6 hidden md:block">
-          ✦ Nuestra esencia · Est. 1999
+          ✦ Nuestra esencia · Est. {SITE.foundedYear}
         </p>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
@@ -173,7 +174,7 @@ export function AboutTeaser() {
                 </defs>
                 <text className="fill-ink text-[11px] uppercase tracking-[0.3em]">
                   <textPath href="#about-seal-path">
-                    · Maison Dulce · Paris / Buenos Aires
+                    · {SITE.name} · {SITE.city}
                   </textPath>
                 </text>
               </svg>
@@ -190,18 +191,18 @@ export function AboutTeaser() {
               as="h2"
               className="text-5xl md:text-7xl leading-[0.95]"
             >
-              Un gesto francés en cada bocado.
+              Un gesto artesanal en cada bocado.
             </SplitReveal>
 
             <p className="serif-italic text-xl md:text-2xl text-ink/70 mt-8 leading-snug">
-              Pasamos nuestras mañanas entre harinas finas, manteca y frutas de estación.
-              Cada torta sale del horno con el mismo cuidado con el que se hornearía para la familia.
+              Pasamos nuestras mañanas entre harinas finas, mantequilla y frutas de temporada.
+              Cada tarta sale del horno con el mismo cuidado con el que se hornearía para la familia.
             </p>
 
             <p className="text-ink/60 mt-6 leading-relaxed max-w-xl">
-              Nuestra pastelera fundadora, Marie, aprendió el oficio en Montmartre y lo trajo
-              a Buenos Aires hace más de dos décadas. Seguimos honrando esa receta: masa laminada
-              a 72 horas, chocolate belga y decoraciones hechas a mano.
+              Creamos cada receta con técnica y paciencia desde hace más de dos décadas.
+              Seguimos honrando la misma base: masa laminada a 72 horas, chocolate premium
+              y decoraciones hechas a mano.
             </p>
 
             <div className="mt-10 flex items-center gap-6">
@@ -222,9 +223,9 @@ export function AboutTeaser() {
                 />
               </svg>
               <div>
-                <p className="serif-italic text-lg">Marie Laurent</p>
+                <p className="serif-italic text-lg">El obrador</p>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-ink/50">
-                  Fundadora · Pastelera jefa
+                  Pastelería artesanal
                 </p>
               </div>
             </div>

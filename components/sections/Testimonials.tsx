@@ -5,14 +5,14 @@ import { useRef } from "react";
 
 const QUOTES = [
   {
-    q: "La mille-feuille es la mejor que probé fuera de París. Crocante, ligera, perfecta.",
+    q: "El mille-feuille es el mejor que he probado. Crujiente, ligero, perfecto.",
     a: "Valentina M.",
-    r: "Cliente desde 2014",
+    r: "Cliente desde hace años",
   },
   {
-    q: "Pedimos la Fresas Rosé para mi casamiento. Todos preguntaron dónde la compramos.",
+    q: "Pedimos la Fresas Rosé para mi boda. Todos preguntaron dónde la habíamos comprado.",
     a: "Ignacio & Lucía",
-    r: "Casamiento 2025",
+    r: "Boda reciente",
   },
   {
     q: "Los macarons siempre llegan intactos, frescos y con una caja preciosa.",
@@ -45,7 +45,7 @@ export function Testimonials() {
             </h2>
           </div>
           <p className="hidden md:block text-xs uppercase tracking-[0.3em] text-cream/40">
-            ← Arrastrá →
+            ← Arrastra →
           </p>
         </div>
 

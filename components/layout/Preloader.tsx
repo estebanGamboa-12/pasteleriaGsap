@@ -28,8 +28,20 @@ export function Preloader() {
       onComplete: () => {
         document.body.style.overflow = "";
         if (container) container.style.display = "none";
+        try {
+          sessionStorage.setItem("demo:preloaded", "1");
+        } catch {}
       },
     });
+
+    if (
+      typeof window !== "undefined" &&
+      sessionStorage.getItem("demo:preloaded") === "1"
+    ) {
+      document.body.style.overflow = "";
+      if (container) container.style.display = "none";
+      return;
+    }
 
     if (tagRef.current) {
       tl.fromTo(
@@ -176,8 +188,8 @@ export function Preloader() {
               / 100
             </span>
           </div>
-          <span className="hidden md:inline text-[10px] uppercase tracking-[0.4em] text-cream/50">
-            Buenos Aires · MMXXVI
+          <span className="hidden md:inline text-[10px] uppercase tracking-[0.4em] text-cream/50 capitalize">
+            {SITE.city} · MMXXVI
           </span>
         </div>
 

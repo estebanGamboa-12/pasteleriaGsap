@@ -71,7 +71,7 @@ export function CartDrawer() {
                     ✦
                   </div>
                   <p className="serif-italic text-xl">
-                    Todavía no agregaste dulces a tu pedido.
+                    Todavía no has añadido dulces a tu pedido.
                   </p>
                   <Link
                     href="/catalogo"

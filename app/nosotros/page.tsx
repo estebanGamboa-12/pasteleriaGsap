@@ -5,33 +5,34 @@ import { SplitReveal } from "@/components/ui/SplitReveal";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 import { Marquee } from "@/components/ui/Marquee";
 import { CTAWhatsApp } from "@/components/sections/CTAWhatsApp";
+import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Nuestra historia",
   description:
-    "Una pastelería parisina, artesanal, horneada a mano en Buenos Aires desde hace más de dos décadas.",
+    "Una pastelería artesanal, horneada a mano, desde hace más de dos décadas.",
 };
 
 const MILESTONES = [
   {
-    year: "1999",
-    title: "Primer horno en Montmartre",
-    body: "Marie abre un pequeño local de barrio donde se horneaban croissants a la madrugada.",
+    year: String(SITE.foundedYear),
+    title: "Primer horno",
+    body: "Abrimos un pequeño obrador de barrio donde se horneaban croissants antes del amanecer.",
   },
   {
-    year: "2006",
-    title: "Cruzamos el océano",
-    body: "El taller se muda a Buenos Aires. Las recetas se adaptan a frutas y lácteos locales.",
+    year: String(SITE.foundedYear + 7),
+    title: "El obrador crece",
+    body: "Las recetas se afinan con frutas y lácteos locales, manteniendo la esencia artesanal.",
   },
   {
-    year: "2014",
+    year: String(SITE.foundedYear + 15),
     title: "Caja signature",
     body: "Nace la caja de 12 macarons que se vuelve clásica en eventos y regalos corporativos.",
   },
   {
-    year: "2023",
-    title: "Nuevo taller en Palermo",
-    body: "Inauguramos el espacio actual, con vitrina abierta al público y horno de suela.",
+    year: String(SITE.foundedYear + 24),
+    title: "Nuevo espacio",
+    body: "Inauguramos la tienda actual, con vitrina abierta al público y horno de suela.",
   },
 ];
 
@@ -56,11 +57,11 @@ export default function NosotrosPage() {
             </div>
             <div className="md:col-span-4 md:pb-4">
               <p className="serif-italic text-xl md:text-2xl text-ink/75 leading-snug">
-                Tres generaciones, una misma receta: harina buena, manteca fresca, tiempo de reposo y las manos como herramienta principal.
+                Tres generaciones, una misma receta: harina buena, mantequilla fresca, tiempo de reposo y las manos como herramienta principal.
               </p>
               <div className="flex items-center gap-4 mt-6 text-[11px] uppercase tracking-[0.3em] text-ink/50">
                 <span className="inline-block w-6 h-px bg-ink/30" />
-                Desde 1999
+                Desde {SITE.foundedYear}
               </div>
             </div>
           </div>
@@ -69,15 +70,15 @@ export default function NosotrosPage() {
             <div className="md:col-span-5 md:row-span-2">
               <ImageReveal
                 src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=1200&q=80"
-                alt="Retrato de la pastelera"
+                alt="Retrato del obrador"
                 width={900}
                 height={1200}
                 wrapperClassName="aspect-[3/4] md:aspect-auto md:h-full rounded-sm"
                 parallax={-6}
               />
               <figcaption className="mt-3 flex items-center justify-between text-[11px] uppercase tracking-[0.3em] text-ink/55">
-                <span>Marie Laurent</span>
-                <span>Fundadora · MMXXVI</span>
+                <span>Maestros pasteleros</span>
+                <span>Est. {SITE.foundedYear}</span>
               </figcaption>
             </div>
 
@@ -86,11 +87,11 @@ export default function NosotrosPage() {
                 “
               </span>
               <blockquote className="relative serif-italic text-3xl md:text-5xl leading-[1.1]">
-                Horneamos las tortas que nos gustaría recibir. Simples, generosas, imposibles de olvidar.
+                Horneamos las tartas que nos gustaría recibir. Simples, generosas, imposibles de olvidar.
               </blockquote>
               <figcaption className="relative mt-10 flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-cream/60">
                 <span className="inline-block w-10 h-px bg-gold" />
-                Marie Laurent · Pastelera jefa
+                {SITE.name} · Pastelería artesanal
               </figcaption>
             </figure>
 
@@ -99,17 +100,17 @@ export default function NosotrosPage() {
                 {
                   n: "01",
                   t: "Recetas centenarias",
-                  d: "Bases clásicas de la tradición parisina, adaptadas con producto local.",
+                  d: "Bases clásicas de la pastelería artesanal, adaptadas con producto local.",
                 },
                 {
                   n: "02",
                   t: "Lotes pequeños",
-                  d: "Horneamos dos veces por día, nunca más de lo que podemos terminar a mano.",
+                  d: "Horneamos dos veces al día, nunca más de lo que podemos terminar a mano.",
                 },
                 {
                   n: "03",
                   t: "Ingredientes nobles",
-                  d: "Manteca francesa, chocolate belga, frutas de productores locales.",
+                  d: "Mantequilla de calidad, chocolate premium y frutas de productores locales.",
                 },
               ].map((v) => (
                 <div
@@ -132,10 +133,10 @@ export default function NosotrosPage() {
 
       <div className="border-y border-ink/10 bg-cream-2/60 overflow-hidden">
         <Marquee className="py-5" speed={55}>
-          <span className="display text-3xl md:text-4xl">Montmartre</span>
+          <span className="display text-3xl md:text-4xl">{SITE.shortName}</span>
           <span className="text-gold text-3xl">✦</span>
-          <span className="serif-italic text-3xl md:text-4xl text-ink/70">
-            Palermo
+          <span className="serif-italic text-3xl md:text-4xl text-ink/70 capitalize">
+            {SITE.city}
           </span>
           <span className="text-gold text-3xl">✦</span>
           <span className="display text-3xl md:text-4xl">Horneado a mano</span>
@@ -144,7 +145,7 @@ export default function NosotrosPage() {
             lotes de 12
           </span>
           <span className="text-gold text-3xl">✦</span>
-          <span className="display text-3xl md:text-4xl">Est. 1999</span>
+          <span className="display text-3xl md:text-4xl">Est. {SITE.foundedYear}</span>
           <span className="text-gold text-3xl">✦</span>
         </Marquee>
       </div>
@@ -186,7 +187,7 @@ export default function NosotrosPage() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <Image
               src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=80"
-              alt="Detalle de una torta"
+              alt="Detalle de una tarta"
               fill
               sizes="(min-width: 768px) 45vw, 90vw"
               className="object-cover"
@@ -200,7 +201,7 @@ export default function NosotrosPage() {
               Dulce pensado para compartir.
             </SplitReveal>
             <p className="serif-italic text-xl text-cream/80 mt-8 leading-snug">
-              No somos una fábrica. Somos un equipo chico que hace lotes chicos. Cada torta se firma en la base y cada caja se arma a mano el día de entrega.
+              No somos una fábrica. Somos un equipo pequeño que hace lotes pequeños. Cada tarta se firma en la base y cada caja se monta a mano el día de entrega.
             </p>
           </div>
         </div>

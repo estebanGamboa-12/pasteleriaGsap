@@ -1,7 +1,10 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const variants = {
   initial: { opacity: 0, y: 24 },
@@ -11,6 +14,10 @@ const variants = {
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  useEffect(() => {
+    gsap.delayedCall(0.06, () => ScrollTrigger.refresh(true));
+  }, [pathname]);
 
   return (
     <AnimatePresence mode="wait" initial={false}>

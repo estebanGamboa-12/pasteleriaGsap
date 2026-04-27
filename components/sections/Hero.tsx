@@ -26,9 +26,8 @@ export function Hero() {
     const words = title.querySelectorAll<HTMLSpanElement>(".hero-word > span");
     const preloaded =
       typeof window !== "undefined" &&
-      sessionStorage.getItem("md:preloaded") === "1";
+      sessionStorage.getItem("demo:preloaded") === "1";
 
-    gsap.set(words, { yPercent: 110 });
     gsap.set([".hero-eyebrow", ".hero-sub", ".hero-cta"], { opacity: 0, y: 16 });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -43,12 +42,16 @@ export function Hero() {
     }
 
     const tl = gsap.timeline({ delay: preloaded ? 0.1 : 0.9 });
-    tl.to(words, {
-      yPercent: 0,
-      duration: 0.8,
-      stagger: 0.06,
-      ease: "power3.out",
-    });
+    tl.to(
+      words,
+      {
+        yPercent: 0,
+        duration: 0.8,
+        stagger: 0.06,
+        ease: "power3.out",
+      },
+      0
+    );
     tl.to(
       ".hero-eyebrow",
       { opacity: 1, y: 0, duration: 0.5 },
@@ -109,7 +112,7 @@ export function Hero() {
                 key={i}
                 className="hero-word inline-block overflow-hidden align-top mr-[0.15em]"
               >
-                <span className="inline-block">
+                <span className="inline-block translate-y-full">
                   {i === 2 ? <em className="serif-italic text-rose-deep">{w}</em> : w}
                 </span>
               </span>
@@ -118,8 +121,8 @@ export function Hero() {
 
           <div className="mt-8 md:mt-14 grid md:grid-cols-[1fr_auto] gap-8 items-end">
             <p className="hero-sub opacity-0 serif-italic text-xl md:text-2xl text-ink/75 max-w-xl">
-              Pastelería parisina artesanal en el corazón de Buenos Aires.
-              Hecho cada mañana con ingredientes de estación, pedidos que llegan directo por WhatsApp.
+              Pastelería artesanal en el corazón de {SITE.city}.
+              Horneado cada mañana con ingredientes de temporada y pedidos directos por WhatsApp.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -159,7 +162,7 @@ export function Hero() {
           </div>
           <div className="absolute -bottom-6 -left-6 md:-left-14 w-32 h-32 md:w-44 md:h-44 rounded-full bg-gold text-ink flex flex-col items-center justify-center text-center p-4 shadow-lg rotate-[-6deg]">
             <span className="text-[9px] uppercase tracking-[0.3em]">Desde</span>
-            <span className="display text-3xl leading-none mt-1">1999</span>
+            <span className="display text-3xl leading-none mt-1">{SITE.foundedYear}</span>
             <span className="serif-italic text-[11px] mt-1">
               horneando a mano
             </span>
@@ -176,9 +179,9 @@ export function Hero() {
           <span className="inline-block w-0.5 h-10 bg-ink/30 relative overflow-hidden">
             <span className="absolute inset-0 bg-ink translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-700" />
           </span>
-          Seguí bajando
+          Sigue bajando
         </Link>
-        <span>{new Date().getFullYear()} · Buenos Aires</span>
+        <span>{new Date().getFullYear()} · {SITE.city}</span>
       </div>
     </section>
   );

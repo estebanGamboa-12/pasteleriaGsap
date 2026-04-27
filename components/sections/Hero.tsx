@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -17,7 +17,7 @@ export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     const title = titleRef.current;
     const image = imageRef.current;
@@ -28,6 +28,7 @@ export function Hero() {
       typeof window !== "undefined" &&
       sessionStorage.getItem("demo:preloaded") === "1";
 
+    gsap.set(words, { yPercent: 110 });
     gsap.set([".hero-eyebrow", ".hero-sub", ".hero-cta"], { opacity: 0, y: 16 });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -112,7 +113,7 @@ export function Hero() {
                 key={i}
                 className="hero-word inline-block overflow-hidden align-top mr-[0.15em]"
               >
-                <span className="inline-block translate-y-full">
+                <span className="inline-block">
                   {i === 2 ? <em className="serif-italic text-rose-deep">{w}</em> : w}
                 </span>
               </span>

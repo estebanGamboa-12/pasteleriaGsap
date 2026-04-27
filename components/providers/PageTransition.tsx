@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
@@ -16,22 +16,32 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    gsap.delayedCall(0.06, () => ScrollTrigger.refresh(true));
+    if (typeof window === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const delayed = gsap.delayedCall(0.06, () => {
+      try {
+        ScrollTrigger.refresh(true);
+      } catch {
+        // Evita romper el render de ruta si GSAP no esta listo.
+      }
+    });
+
+    return () => {
+      delayed.kill();
+    };
   }, [pathname]);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        variants={variants}
-        initial="initial"
-        animate="enter"
-        exit="exit"
-        transition={{ duration: 0.55, ease: [0.77, 0, 0.175, 1] }}
-        className="min-h-[calc(100vh-5rem)]"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      variants={variants}
+      initial="initial"
+      animate="enter"
+      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-[calc(100vh-5rem)]"
+    >
+      {children}
+    </motion.div>
   );
 }
